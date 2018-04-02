@@ -7,9 +7,61 @@
 		    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		    crossorigin="anonymous" defer></script>
     <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/simple-grid.min.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    
+    <div class="container">
+      <h1>Computer Usage Survey</h1>
+      <h2>For Primary School students with Irlen Syndrome</h2>
+      <div class="row colour-picker">
+        <div class="col-2 selected" id="grey">#DCE6F2</div>
+        <div class="col-2" id="blue">#9AB8FC</div>
+        <div class="col-2" id="green">#AAF2A0</div>
+        <div class="col-2" id="yellow">#FFFF8F</div>
+        <div class="col-2" id="purple">#BF95DF</div>
+        <div class="col-2" id="red">#E3B0AF</div>
+      </div>
+      <form>
+        <label for="age">How old are you?</label>
+        <input type="range" id="age" min="4" value="8" max="12" step="1">
+        
+        <label for="gender">What is your gender?</label>
+        <input type="radio" name="gender" value="m" id="male"> <label for="male">Male</label>
+        <input type="radio" name="gender" value="f" id="female"> <label for="female">Female</label>
+        <input type="radio" name="gender" value="o" id="other"> <label for="other">Other</label>
+        
+        <label for="postcode">What postcode do you live in?</label>
+        <input type="number" id="postcode" placeholder="2292" min="1111" max="9999">
+        
+        <label for="home-hours">How many hours do you spend online at <strong>home</strong> per week?</label>
+        <input type="range" id="home-hours" min="0" value="15" max="30" step="1">
+        
+        <label for="home-hours">How many hours do you spend online at <strong>school</strong> per week?</label>
+        <input type="range" id="school-hours" min="0" value="15" max="30" step="1">
+        
+        <label for="activities">What activities do you complete when you are online? (select all that apply)</label>
+        <input type="checkbox">
+      </form>
+      age
+      gender
+      postcode
+      number of hours online
+       - home
+       - school
+      activities completed
+      devices used
+      https://thenewcode.com/757/Playing-With-The-HTML5-range-Slider-Input
+      http://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html
+      https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output
+      https://irlen.com/what-is-irlen-syndrome/
+      https://irlen.com/light-sensitivity-fluorescent-lights-and-irlen/#
+      https://irlen.com/reading-problems-dyslexia-learning-difficulties-the-irlen-method/#
+      https://irlen.com/what-you-can-do/
+      https://irlen.com/colored-overlays/#
+      https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage - for keeping colour
+      https://www.the-art-of-web.com/html/html5-form-validation/
+      simplegrid.io
+    </div>
   </body>
 </html>

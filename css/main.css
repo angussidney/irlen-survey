@@ -1,0 +1,46 @@
+.container {
+  margin-top: 40px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+body {
+  background-color: #DCE6F2;
+}
+
+.colour-picker div {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+}
+
+#grey {
+  background-color: #DCE6F2;
+}
+
+#blue {
+  background-color: #9AB8FC;
+}
+
+#green {
+  background-color: #AAF2A0;
+}
+
+#yellow {
+  background-color: #FFFF8F;
+}
+
+#purple {
+  background-color: #BF95DF;
+}
+
+#red {
+  background-color: #E3B0AF;
+}
+
+.selected {
+  outline: 1px solid rgba(0, 0, 0, 0.7);
+}
