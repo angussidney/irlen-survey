@@ -8,6 +8,9 @@ $(document).ready(function() {
         '#E3B0AF': '#red'
     };
     var currentColour = localStorage.getItem('bg');
+    if (currentColour === null) {
+        currentColour = "#DCE6F2"
+    }
     $('body').css('background', currentColour);
     $(mappings[currentColour]).toggleClass('selected');
 
