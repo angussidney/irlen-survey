@@ -14,43 +14,70 @@
     <div class="container">
       <h1>Computer Usage Survey</h1>
       <h2>For Primary School students with Irlen Syndrome</h2>
+      <p>For better reading, please pick your preferred colour:</p>
       <div class="row colour-picker">
-        <div class="col-2 selected" id="grey">#DCE6F2</div>
-        <div class="col-2" id="blue">#9AB8FC</div>
-        <div class="col-2" id="green">#AAF2A0</div>
-        <div class="col-2" id="yellow">#FFFF8F</div>
-        <div class="col-2" id="purple">#BF95DF</div>
-        <div class="col-2" id="red">#E3B0AF</div>
+        <div class="col-2" id="grey">Light Blue</div>
+        <div class="col-2" id="blue">Dark Blue</div>
+        <div class="col-2" id="green">Green</div>
+        <div class="col-2" id="purple">Purple</div>
+        <div class="col-2" id="yellow">Yellow</div>
+        <div class="col-2" id="red">Red</div>
       </div>
-      <form>
-        <label for="age">How old are you?</label>
-        <input type="range" id="age" min="4" value="8" max="12" step="1">
+      <p>Please fill out all applicable fields by:</p>
+      <ul>
+        <li>Dragging the sliders to pick a value</li>
+        <li>Selecting one circle from each group of radio buttons</li>
+        <li>Select all checkboxes that apply to you</li>
+      </ul>
+      <div class="row"><form id="irlen-survey" method="post" action="thanks.html">
+        <label for="age"><h3>How old are you?</h3></label>
+        <div><label for="age">4 and younger</label> <input type="range" id="age" min="4" value="8" max="12" step="1"> <label for="age">12 and older</label></div>
         
-        <label for="gender">What is your gender?</label>
-        <input type="radio" name="gender" value="m" id="male"> <label for="male">Male</label>
-        <input type="radio" name="gender" value="f" id="female"> <label for="female">Female</label>
-        <input type="radio" name="gender" value="o" id="other"> <label for="other">Other</label>
+        <label for="gender"><h3>What is your gender?</h3></label>
+        <div id="gender">
+          <div><input type="radio" name="gender" value="m" id="male" required> <label for="male">Male</label></div>
+          <div><input type="radio" name="gender" value="f" id="female" required> <label for="female">Female</label></div>
+          <div><input type="radio" name="gender" value="o" id="other-gender" required> <label for="other-gender">Other</label></div>
+        </div>
         
-        <label for="postcode">What postcode do you live in?</label>
-        <input type="number" id="postcode" placeholder="2292" min="1111" max="9999">
+        <label for="postcode"><h3>What postcode do you live in?</h3></label>
+        <input type="text" id="postcode" placeholder="2292" pattern="\d\d\d\d" oninvalid="this.setCustomValidity('Invalid postcode. Postcodes are 4 numbers long.')" onvalid="this.setCustomValidity('')">
         
-        <label for="home-hours">How many hours do you spend online at <strong>home</strong> per week?</label>
-        <input type="range" id="home-hours" min="0" value="15" max="30" step="1">
+        <label for="home-hours"><h3>How many hours do you spend online at <strong>home</strong> per week?</h3></label>
+        <div><label for="home-hours">0</label> <input type="range" id="home-hours" min="0" value="15" max="30" step="1"> <label for="home-hours">30+</label></div>
         
-        <label for="home-hours">How many hours do you spend online at <strong>school</strong> per week?</label>
-        <input type="range" id="school-hours" min="0" value="15" max="30" step="1">
+        <label for="home-hours"><h3>How many hours do you spend online at <strong>school</strong> per week?</h3></label>
+        <div><label for="school-hours">0</label> <input type="range" id="school-hours" min="0" value="15" max="30" step="1"> <label for="school-hours">30+</label></div>
         
-        <label for="activities">What activities do you complete when you are online? (select all that apply)</label>
-        <input type="checkbox">
-      </form>
-      age
-      gender
-      postcode
-      number of hours online
-       - home
-       - school
-      activities completed
-      devices used
+        <label for="activities"><h3>What activities do you complete when you are online? (select all that apply)</h3></label>
+        <div id="activities">
+          <div><input type="checkbox" name="activities" value="Homework" id="homework"> <label for="homework">Homework/Study</label></div>
+          <div><input type="checkbox" name="activities" value="Assignments" id="assignment"> <label for="assignment">Research/Assignments</label></div>
+          <div><input type="checkbox" name="activities" value="Games" id="games"> <label for="games">Videogames</label></div>
+          <div><input type="checkbox" name="activities" value="SocialMedia" id="media"> <label for="media">Social media</label></div>
+          <div><input type="checkbox" name="activities" value="Videos" id="videos"> <label for="videos">Watching videos</label></div>
+          <div><input type="checkbox" name="activities" value="Internet" id="internet"> <label for="internet">Browsing the internet</label></div>
+          <div><input type="checkbox" name="activities" value="Games" id="shopping"> <label for="shopping">Shopping</label></div>
+          <div><input type="checkbox" name="activities" value="Communicating" id="communication"> <label for="communication">Communicating with friends (messaging, video calling, etc)</label></div>
+          <div><input type="checkbox" name="activities" value="Other" id="other-activity"> <label for="other-activity">Other:</label> <input type="text" maxlength="100"></div>
+        </div>
+
+        <label for="devices"><h3>What activities do you complete when you are online? (select all that apply)</h3></label>
+        <div id="devices">
+          <div><input type="checkbox" name="devices" value="DesktopPC" id="desktop"> <label for="desktop">Desktop PC</label></div>
+          <div><input type="checkbox" name="devices" value="Laptop" id="laptop"> <label for="laptop">Laptop</label></div>
+          <div><input type="checkbox" name="devices" value="Tablet" id="tablet"> <label for="tablet">Tablet</label></div>
+          <div><input type="checkbox" name="devices" value="Phone" id="phone"> <label for="phone">Phone</label></div>
+          <div><input type="checkbox" name="devices" value="Console" id="console"> <label for="console">Console</label></div>
+          <div><input type="checkbox" name="devices" value="TV" id="tv"> <label for="tv">TV</label></div>
+          <div><input type="checkbox" name="devices" value="Smartboard" id="smartboard"> <label for="smartboard">Smartboard</label></div>
+          <div><input type="checkbox" name="activities" value="Other" id="other-device"> <label for="other-device">Other:</label> <input type="text" maxlength="100"></div>
+        </div>
+
+        <div id="final"><input type="submit" value="Save and submit!"> or <a href="#irlen-survey" onclick="$('#irlen-survey').trigger('reset');">reset and start again</a></div>
+
+      </form></div>
+      <!--
       https://thenewcode.com/757/Playing-With-The-HTML5-range-Slider-Input
       http://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html
       https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output
@@ -62,6 +89,9 @@
       https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage - for keeping colour
       https://www.the-art-of-web.com/html/html5-form-validation/
       simplegrid.io
+      'use the buttons below to complete the survey'
+      $("#yourFormId").trigger('reset');
+      -->
     </div>
   </body>
 </html>

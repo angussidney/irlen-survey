@@ -1,13 +1,15 @@
 .container {
   margin-top: 40px;
+  margin-bottom: 100px;
 }
 
 h1, h2 {
   text-align: center;
 }
 
-body {
-  background-color: #DCE6F2;
+h3 {
+  text-align: center;
+  margin-top: 60px;
 }
 
 .colour-picker div {
@@ -15,6 +17,9 @@ body {
   padding-top: 15px;
   padding-bottom: 15px;
   cursor: pointer;
+}
+.colour-picker div:focus {
+  outline: 1px solid rgba(0, 0, 0, 0.7);
 }
 
 #grey {
@@ -43,4 +48,16 @@ body {
 
 .selected {
   outline: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+#postcode, label[for="postcode"] {
+  display: block;
+}
+
+#final {
+  margin-top: 40px;
+}
+
+h2 {
+  margin-bottom: 100px;
 }
