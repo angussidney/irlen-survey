@@ -23,15 +23,16 @@
         <div class="col-2" id="yellow">Yellow</div>
         <div class="col-2" id="red">Red</div>
       </div>
-      <p>Please fill out all applicable fields by:</p>
+      <p>Please fill out all applicable fields below by:</p>
       <ul>
-        <li>Dragging the sliders to pick a value</li>
-        <li>Selecting one circle from each group of radio buttons</li>
-        <li>Select all checkboxes that apply to you</li>
+        <li><p>Dragging the sliders to pick a value</p></li>
+        <li><p>Selecting one circle from each group of radio buttons</p></li>
+        <li><p>Select all checkboxes that apply to you</p></li>
       </ul>
-      <div class="row"><form id="irlen-survey" method="post" action="thanks.html">
+      <div class="row"><form id="irlen-survey" method="get" action="thanks.html">
         <label for="age"><h3>How old are you?</h3></label>
-        <div><label for="age">4 and younger</label> <input type="range" id="age" min="4" value="8" max="12" step="1"> <label for="age">12 and older</label></div>
+        <div class="row"><label for="age" class="col-2 right">4 or younger</label> <div class="col-8"><input type="range" id="age" min="4" value="8" max="12" step="1" oninput="outputUpdateAge(value)"></div> <label for="age" class="col-2">12 or older</label></div>
+        <div class="center">You are <strong><output id="age-output">8</output></strong> years old.</div>
         
         <label for="gender"><h3>What is your gender?</h3></label>
         <div id="gender">
@@ -44,11 +45,13 @@
         <input type="text" id="postcode" placeholder="2292" pattern="\d\d\d\d" oninvalid="this.setCustomValidity('Invalid postcode. Postcodes are 4 numbers long.')" onvalid="this.setCustomValidity('')">
         
         <label for="home-hours"><h3>How many hours do you spend online at <strong>home</strong> per week?</h3></label>
-        <div><label for="home-hours">0</label> <input type="range" id="home-hours" min="0" value="15" max="30" step="1"> <label for="home-hours">30+</label></div>
-        
+        <div class="row"><label for="home-hours" class="col-2 right">0</label> <div class="col-8"><input type="range" id="home-hours" min="0" value="15" max="30" step="1" oninput="outputUpdateHome(value)"></div> <label for="home-hours" class="col-2">30+</label></div>
+        <div class="center">You spend <strong><output id="home-output">15</output></strong> hours online at home each week.</div>
+
         <label for="home-hours"><h3>How many hours do you spend online at <strong>school</strong> per week?</h3></label>
-        <div><label for="school-hours">0</label> <input type="range" id="school-hours" min="0" value="15" max="30" step="1"> <label for="school-hours">30+</label></div>
-        
+        <div class="row"><label for="school-hours" class="col-2 right">0</label> <div class="col-8"><input type="range" id="school-hours" min="0" value="15" max="30" step="1" oninput="outputUpdateSchool(value)"></div> <label for="school-hours" class="col-2">30+</label></div>
+        <div class="center">You spend <strong><output id="school-output">15</output></strong> hours online at home each week.</div>
+
         <label for="activities"><h3>What activities do you complete when you are online? (select all that apply)</h3></label>
         <div id="activities">
           <div><input type="checkbox" name="activities" value="Homework" id="homework"> <label for="homework">Homework/Study</label></div>
@@ -74,7 +77,7 @@
           <div><input type="checkbox" name="activities" value="Other" id="other-device"> <label for="other-device">Other:</label> <input type="text" maxlength="100"></div>
         </div>
 
-        <div id="final"><input type="submit" value="Save and submit!"> or <a href="#irlen-survey" onclick="$('#irlen-survey').trigger('reset');">reset and start again</a></div>
+        <div id="final"><input type="submit" value="Save and submit!"> or <a href="#irlen-survey" onclick="$('#irlen-survey').trigger('reset');$('#age-output').val(8);$('#home-output').val(15);$('#school-output').val(15);">reset and start again</a></div>
 
       </form></div>
       <!--

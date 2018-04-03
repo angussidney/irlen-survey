@@ -54,3 +54,29 @@ $(document).ready(function() {
         currentColour = '#E3B0AF';
     });
 });
+
+function outputUpdateAge(value) {
+    if (value == 4) {
+        $('#age-output').val('4-');
+    } else if (value == 12) {
+        $('#age-output').val('12+');
+    } else {
+        $('#age-output').val(value);
+    }
+}
+
+function outputUpdateHome(value) {
+    if (value == 30) {
+        $('#home-output').val('30+');
+    } else {
+        $('#home-output').val(value);
+    }
+}
+
+function outputUpdateSchool(value) {
+    if (value == 30) {
+        $('#school-output').val('30+');
+    } else {
+        $('#school-output').val(value);
+    }
+}
